@@ -1,0 +1,19 @@
+{
+  "name": "Windsurf Dev Container",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "node",
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "codeium.windsurfpyright",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-python.python",
+        "ms-python.pylint",
+        "vscode-icons-team.vscode-icons",
+        "github.github-vscode-theme"
+      ]
+    }
+  }
+}
