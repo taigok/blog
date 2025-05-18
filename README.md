@@ -1,42 +1,90 @@
-# Portfolio Blog Starter
+# ブログプロジェクト
 
-This is a porfolio site template complete with a blog. Includes:
+## 概要
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
-- Geist font
+このプロジェクトは、Next.jsとTypeScriptを用いた静的ブログアプリケーションです。記事はMDX形式で記述され、SEOやSNSシェアにも最適化されています。
 
-## Demo
+## 主な機能
 
-https://portfolio-blog-starter.vercel.app
+- 記事の一覧表示・詳細ページ
+- MDXによる記事コンテンツ
+- 静的サイト生成（SSG）
+- 構造化データ（JSON-LD）によるSEO強化
+- OpenGraph/Twitterカード対応
+- レスポンシブデザイン
+- 404（記事が見つからない場合）の対応
 
-## How to Use
+## slug（スラッグ）とは
 
-You can choose from one of the following two methods to use this repository:
+slug（スラッグ）は、各記事ページのURLの一部として使われる短い文字列です。記事タイトルを英語などで短く、URLに適した形（小文字・ハイフン区切り等）にしたもので、記事を一意に識別します。
 
-### One-Click Deploy
+例：
+- 記事タイトル: 「静的型付けとは？」
+- slug: `static-typing`
+- URL: `/blog/static-typing`
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+## ディレクトリ構成
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
+```
+/app
+  /blog
+    /[slug]         ... 各記事ページ
+      page.tsx
+    /posts          ... MDX記事ファイル
+      *.mdx
+    page.tsx        ... 記事一覧ページ
+    utils.ts        ... 記事取得・日付整形などのユーティリティ
+  /components       ... 共通コンポーネント
+    footer.tsx
+    mdx.tsx         ... MDXレンダラー
+    nav.tsx         ... ナビゲーションバー
+    posts.tsx
+  global.css        ... 全体スタイル
+  layout.tsx        ... ルートレイアウト
+  not-found.tsx     ... 404ページ
+  og/               ... OG画像生成
+  robots.ts         ... robots.txt生成
+  sitemap.ts        ... サイトマップ生成
+/public
+  ...
+README.md
+package.json
+tsconfig.json
+postcss.config.js
+pnpm-lock.yaml
 ```
 
-Then, run Next.js in development mode:
+## セットアップ方法
+
+1. リポジトリをクローン
 
 ```bash
-pnpm dev
+git clone [リポジトリURL]
+cd blog
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+2. 依存パッケージをインストール
+
+```bash
+npm install
+```
+
+3. 開発サーバーを起動
+
+```bash
+npm run dev
+```
+
+4. ブラウザで `http://localhost:3000` を開く
+
+## 依存関係
+
+- Next.js
+- React
+- TypeScript
+- MDX関連パッケージ
+- その他（package.json参照）
+
+## ライセンス
+
+MITライセンス
