@@ -33,6 +33,10 @@ html {
   min-width: 360px;
 }
 
+.prose {
+  @apply leading-relaxed;
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -61,7 +65,7 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm my-6;
 }
 
 .prose code {
@@ -71,7 +75,7 @@ html {
 .prose pre code {
   @apply p-0;
   border: initial;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .prose code span {
@@ -84,7 +88,7 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply my-4 text-neutral-800 dark:text-neutral-200 leading-relaxed;
 }
 
 .prose h1 {
@@ -108,11 +112,15 @@ html {
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc pl-6 leading-relaxed;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 leading-relaxed;
+}
+
+.prose li {
+  @apply my-1;
 }
 
 .prose > :first-child {
